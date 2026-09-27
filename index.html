@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weatherly | Task 27</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Animated weather effects -->
+    <div id="weatherEffects"></div>
+
+    <div class="bg-shape shape-one"></div>
+    <div class="bg-shape shape-two"></div>
+
+    <main class="app">
+
+        <!-- HEADER -->
+        <header class="top-bar">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    ☁️
+                </div>
+
+                <div>
+                    <strong>Weatherly</strong>
+                    <small>Static Weather Explorer</small>
+                </div>
+
+            </div>
+
+            <div class="header-actions">
+
+                <button class="theme-toggle" id="themeToggle">
+                    🌙
+                </button>
+
+                <div class="task-badge">
+                    <span></span>
+                    TASK 27
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <div class="eyebrow">
+                <span>✦</span>
+                WEATHER ICON DISPLAY
+            </div>
+
+            <h1>
+                Explore the mood<br>
+                of the <em>sky.</em>
+            </h1>
+
+            <p>
+                Choose a weather condition and watch the dashboard
+                transform with matching visuals, temperature and details.
+            </p>
+
+        </section>
+
+
+        <!-- LOCATION BAR -->
+        <div class="location-bar">
+
+            <div class="location">
+
+                <span class="location-icon">📍</span>
+
+                <div>
+                    <small>STATIC LOCATION</small>
+                    <strong id="cityName">Jaipur, India</strong>
+                </div>
+
+            </div>
+
+            <div class="date-display">
+                <span id="currentDay">Saturday</span>
+                <span>•</span>
+                <span id="currentDate">27 Sep 2026</span>
+            </div>
+
+        </div>
+
+
+        <!-- MAIN WEATHER CARD -->
+        <section class="weather-dashboard">
+
+            <!-- VISUAL -->
+            <div class="weather-visual" id="weatherVisual">
+
+                <div class="sun-rays"></div>
+
+                <div class="visual-cloud cloud-one">
+                    ☁
+                </div>
+
+                <div class="visual-cloud cloud-two">
+                    ☁
+                </div>
+
+                <div class="star star-one">✦</div>
+                <div class="star star-two">✦</div>
+
+                <div class="main-icon" id="weatherIcon">
+                    🌤️
+                </div>
+
+                <div class="temperature">
+                    <span id="temperature">--</span>
+                    <sup>°C</sup>
+                </div>
+
+                <div class="status-pill">
+                    <span></span>
+                    STATIC DATA
+                </div>
+
+            </div>
+
+
+            <!-- INFORMATION -->
+            <div class="weather-info">
+
+                <div class="condition-top">
+
+                    <span>CURRENT CONDITION</span>
+
+                    <strong id="conditionNumber">
+                        00
+                    </strong>
+
+                </div>
+
+                <h2 id="weatherTitle">
+                    Select Weather
+                </h2>
+
+                <p
+                    class="description"
+                    id="weatherDescription"
+                >
+                    Choose a weather condition below to discover
+                    its weather profile.
+                </p>
+
+
+                <!-- MOOD -->
+                <div class="weather-mood">
+
+                    <span>✦</span>
+
+                    <p id="weatherMood">
+                        Your weather mood will appear here.
+                    </p>
+
+                </div>
+
+
+                <!-- SELECT -->
+                <div class="selector-box">
+
+                    <label>
+                        SELECT CONDITION
+                    </label>
+
+                    <div class="select-container">
+
+                        <span class="select-icon">
+                            ◉
+                        </span>
+
+                        <select id="weatherSelect">
+
+                            <option value="">
+                                Choose a weather condition
+                            </option>
+
+                            <option value="sunny">
+                                ☀️ Sunny
+                            </option>
+
+                            <option value="cloudy">
+                                ☁️ Cloudy
+                            </option>
+
+                            <option value="rainy">
+                                🌧️ Rainy
+                            </option>
+
+                            <option value="stormy">
+                                ⛈️ Stormy
+                            </option>
+
+                            <option value="snowy">
+                                ❄️ Snowy
+                            </option>
+
+                            <option value="windy">
+                                💨 Windy
+                            </option>
+
+                            <option value="foggy">
+                                🌫️ Foggy
+                            </option>
+
+                        </select>
+
+                        <span class="arrow">
+                            ⌄
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- QUICK SELECT -->
+                <div class="quick-section">
+
+                    <span>QUICK SELECT</span>
+
+                    <div class="quick-buttons">
+
+                        <button data-weather="sunny">☀️</button>
+                        <button data-weather="cloudy">☁️</button>
+                        <button data-weather="rainy">🌧️</button>
+                        <button data-weather="stormy">⛈️</button>
+                        <button data-weather="snowy">❄️</button>
+                        <button data-weather="windy">💨</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- WEATHER STATS -->
+        <section class="stats-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🌡️
+                </div>
+
+                <div>
+                    <small>FEELS LIKE</small>
+                    <strong id="feelsLike">--°</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    💧
+                </div>
+
+                <div>
+                    <small>HUMIDITY</small>
+                    <strong id="humidity">--%</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    💨
+                </div>
+
+                <div>
+                    <small>WIND SPEED</small>
+                    <strong id="wind">-- km/h</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    👁️
+                </div>
+
+                <div>
+                    <small>VISIBILITY</small>
+                    <strong id="visibility">-- km</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FORECAST -->
+        <section class="forecast-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <span>STATIC FORECAST</span>
+                    <h2>Next 7 Days</h2>
+                </div>
+
+                <div class="forecast-note">
+                    No API required
+                </div>
+
+            </div>
+
+
+            <div
+                class="forecast-grid"
+                id="forecastGrid"
+            >
+            </div>
+
+        </section>
+
+
+        <!-- RECENT -->
+        <section class="recent-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <span>YOUR ACTIVITY</span>
+                    <h2>Recently Viewed</h2>
+                </div>
+
+            </div>
+
+            <div
+                class="recent-list"
+                id="recentList"
+            >
+
+                <p class="empty-recent">
+                    Select a weather condition to create history.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- FEATURES -->
+        <section class="features">
+
+            <div class="feature-card">
+
+                <span>⚡</span>
+
+                <div>
+                    <strong>Instant Update</strong>
+                    <small>Changes on selection</small>
+                </div>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <span>🎨</span>
+
+                <div>
+                    <strong>Dynamic Theme</strong>
+                    <small>Matches the weather</small>
+                </div>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <span>🧩</span>
+
+                <div>
+                    <strong>Static Mapping</strong>
+                    <small>No API required</small>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer>
+
+            <div class="footer-tech">
+                <span>HTML5</span>
+                <i></i>
+                <span>CSS3</span>
+                <i></i>
+                <span>JavaScript</span>
+            </div>
+
+            <p>
+                Built for Web Development Track • Day 27
+            </p>
+
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
